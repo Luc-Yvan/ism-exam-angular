@@ -1,0 +1,73 @@
+
+<div class="container-fluid mt-2" layout:fragment="contentForView">
+
+    <div class="card mt-1">
+        <div class="card-header">
+            <h3>Liste des Cours</h3>
+        </div>
+        <div class="card-body">
+            <div class="my-2 float-end">
+                <a  class="btn btn-outline-info"  >Nouveau</a>
+               
+            </div>
+            <div>
+            <form class="d-flex w-50 mb-3">
+                <input class="form-control me-2"
+                  #keyword
+                  (keyup)="searchLibelle(keyword.value)" 
+                   name="keyword" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success"
+                     type="submit">Search</button>
+            </form>
+            </div>
+          
+  
+            <table class="table table-bordered">
+                <thead>
+                <th>libelle</th>
+                <th>volume_horaire</th>
+                <th>professeur</th>
+                <th>classe</th>
+                </thead>
+                <tbody>   
+                           
+           @for (item of response?.results; track $index){
+                      
+                <tr >
+                    <td >{{item.libelle}}</td>
+                    <td >{{item.volume_horaire}}</td>
+                    <td >{{item.professeur}}</td>
+                    <td >{{item.classe}}</td>
+  
+                    <td>
+                        <a 
+                           class="btn btn-outline-success"> Voir details </a>
+                    </td>
+                    <td>
+                        <a 
+                           class="btn btn-outline-success"> Voir mon cours</a>
+  
+                        <a  class="btn btn-outline-success"> Nouveau cours</a>
+                    </td>
+  
+                </tr>
+          }
+  
+              
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link">Previous</a></li>
+                    @for (item of response?.pages; track $index){
+                      <li class="page-item" [ngClass]="{'active':$index==response?.currentPage}">
+                          <a (click)="paginate($index)" class="page-link">{{$index+1}}</a>
+                      </li>
+                    }
+                      <li class="page-item"><a class="page-link" >Next </a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- Content here -->
+  </div>
