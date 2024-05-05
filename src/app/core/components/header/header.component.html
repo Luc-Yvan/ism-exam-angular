@@ -15,12 +15,20 @@ mb-3 " >
                  id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a  class="nav-link active text-black"
-                           aria-current="page" href="">Classes</a>
+                        <a [routerLink]="['/classe']"routerLinkActive="active" class="nav-link active text-black"
+                           aria-current="page" >Les classes</a>
                     </li>
                     <li  class="nav-item">
                         <a [routerLink]="['/cours']"routerLinkActive="active" class="nav-link text-black"
-                           href="">Les cours</a>
+                           >Les cours</a>
+                    </li>
+                    <li  class="nav-item">
+                        <a [routerLink]="['/prof']"routerLinkActive="active" class="nav-link text-black"
+                           >Les profs</a>
+                    </li>
+                    <li  class="nav-item">
+                        <a [routerLink]="['/salle']"routerLinkActive="active" class="nav-link text-black"
+                           >Les salles</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"

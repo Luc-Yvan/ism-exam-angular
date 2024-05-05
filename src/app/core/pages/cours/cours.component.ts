@@ -15,6 +15,7 @@ import { CoursServiceImpl } from '../../services/cours.service.impl';
 })
 export class CoursComponent implements OnInit{
   response?:RestResponse<CoursListe[]>;
+  selectedEtatCours: string = '';
   constructor(private coursService:CoursServiceImpl){
 
   }
@@ -24,8 +25,8 @@ export class CoursComponent implements OnInit{
     });
     this.refresh()
   }
-  refresh(page:number=0,keyword:string=""){
-    this.coursService.findAll(page,keyword).subscribe(data=>this.response=data);
+  refresh(page:number=0,keyword:string="",select:string=""){
+    this.coursService.findAll(page,keyword,select).subscribe(data=>this.response=data);
   }
   paginate(page:number){
     this.refresh(page)
@@ -33,6 +34,11 @@ export class CoursComponent implements OnInit{
   searchLibelle(libelle:string){
     if(libelle.length>=3){
           this.refresh(0,libelle)
+    }
+  }
+  searchEtatCours(etatCours:string){
+    if(etatCours.length>=3){
+          this.refresh(0,'',etatCours)
     }
   }
 

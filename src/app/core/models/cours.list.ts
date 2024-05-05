@@ -5,6 +5,7 @@ export  type CoursListe ={
     volume_horaire: number,
     professeur:string,
     classe:string
+    etatCours:string
 
    
  

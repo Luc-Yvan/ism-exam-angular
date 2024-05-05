@@ -14,8 +14,8 @@ export class CoursServiceImpl implements CoursService {
     private apiUrl=`${environment.APIURL}/cours`
 
     constructor(private http:HttpClient) { }
-    findAll(page:number=0,keyword:string=""): Observable<RestResponse<CoursListe[]>> {
-        return  this.http.get<RestResponse<CoursListe[]>>(`${this.apiUrl}?page=${page}&keyword=${keyword}`)
+    findAll(page:number=0,keyword:string="",select:string=""): Observable<RestResponse<CoursListe[]>> {
+        return  this.http.get<RestResponse<CoursListe[]>>(`${this.apiUrl}?page=${page}&keyword=${keyword}&etatCours=${select}`)
     }
 
 }
