@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ProfListe } from '../../models/prof.list';
 import { RestResponse } from '../../models/rest.response';
-import { ProfServiceImpl } from '../../services/prof.service.impl';
+import { ProfServiceImpl } from '../../services/prof/prof.service.impl';
 
 @Component({
   selector: 'app-prof',

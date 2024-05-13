@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClasseListe } from '../../models/classe.list';
 import { RestResponse } from '../../models/rest.response';
-import { ClasseServiceImpl } from '../../services/classe.service.impl';
+import { ClasseServiceImpl } from '../../services/classe/classe.service.impl';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 

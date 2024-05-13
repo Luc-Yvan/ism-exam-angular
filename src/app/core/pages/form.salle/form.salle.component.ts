@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SalleService } from '../../services/salle.service';
+import { SalleService } from '../../services/salle/salle.service';
 import { Router } from '@angular/router';
-import { SalleServiceImpl } from '../../services/salle.service.impl';
+import { SalleServiceImpl } from '../../services/salle/salle.service.impl';
 import { SalleCreate } from '../../models/salle.list';
 
 @Component({

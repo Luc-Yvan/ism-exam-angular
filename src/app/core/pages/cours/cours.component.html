@@ -52,14 +52,14 @@
                     <td >{{item.volume_horaire}}</td>
                     <td >{{item.professeur}}</td>
                     <td >{{item.classe}}</td>
-                    <td >{{item.etatCours}}</td>
+                    <td >{{item.etatCours}} {{item.id }}</td>
 
   
                     <td>
-                        <a  class="btn btn-outline-success"> Voir details </a>
+                        <a routerLink="/session/{{item.id}}"  class="btn btn-outline-success"> Voir details </a>
                     </td>
                     <td>
-                        <a  class="btn btn-outline-success"> Voir mon cours</a>
+                        <a class="btn btn-outline-success"> Voir mon cours</a>
   
                     </td>
   

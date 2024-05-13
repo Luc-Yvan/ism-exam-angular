@@ -1,8 +1,8 @@
 import { Observable } from "rxjs";
-import { CoursListe } from "../models/cours.list";
-import { RestResponse } from "../models/rest.response";
+import { CoursListe } from "../../models/cours.list";
+import { RestResponse } from "../../models/rest.response";
 import { CoursService } from "./cours.service";
-import { environment } from "../../environnements/environment.development";
+import { environment } from "../../../environnements/environment.development";
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 

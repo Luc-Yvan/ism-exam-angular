@@ -1,6 +1,6 @@
 import { Observable } from "rxjs";
-import { CoursListe } from "../models/cours.list";
-import { RestResponse } from "../models/rest.response";
+import { CoursListe } from "../../models/cours.list";
+import { RestResponse } from "../../models/rest.response";
 
 export interface CoursService {
     findAll(page:number,keyword:string,select:string):Observable<RestResponse<CoursListe[]>>;

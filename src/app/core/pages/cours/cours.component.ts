@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CoursListe } from '../../models/cours.list';
 import { RestResponse } from '../../models/rest.response';
-import { CoursService } from '../../services/cours.service';
-import { CoursServiceImpl } from '../../services/cours.service.impl';
+import { CoursService } from '../../services/cours/cours.service';
+import { CoursServiceImpl } from '../../services/cours/cours.service.impl';
 
 @Component({
   selector: 'app-cours',

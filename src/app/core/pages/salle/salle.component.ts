@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { RestResponse } from '../../models/rest.response';
 import { SalleListe } from '../../models/salle.list';
-import { SalleServiceImpl } from '../../services/salle.service.impl';
+import { SalleServiceImpl } from '../../services/salle/salle.service.impl';
 
 @Component({
   selector: 'app-salle',

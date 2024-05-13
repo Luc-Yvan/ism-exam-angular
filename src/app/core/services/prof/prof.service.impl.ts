@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
-import { ProfListe } from "../models/prof.list";
-import { RestResponse } from "../models/rest.response";
+import { ProfListe } from "../../models/prof.list";
+import { RestResponse } from "../../models/rest.response";
 import { ProfService } from "./prof.service";
 import { Injectable } from "@angular/core";
-import { environment } from "../../environnements/environment.development";
+import { environment } from "../../../environnements/environment.development";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
