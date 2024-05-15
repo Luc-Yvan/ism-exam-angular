@@ -25,7 +25,7 @@
                         <tbody>
                             @for (item of response?.results; track $index){
                       
-                                <tr >
+                                <tr>
                                     <td >{{item.id}}</td>
                                     <td >{{item.cours}}</td>
                                     <td >{{item.etatCours}}</td>
@@ -37,7 +37,7 @@
                                     <td >{{item.salle}}</td>
                                     <td >{{item.capacite}}</td>
                                     <td>
-                                        <a class="btn btn-outline-success"> Voir details </a>
+                                        <a routerLink="/inscription/{{item.id}}" class="btn btn-outline-success"> Voir Etudiants </a>
                                     </td>
                                 </tr>
                           }   
