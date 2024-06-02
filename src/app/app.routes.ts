@@ -6,11 +6,22 @@ import { SalleComponent } from './core/pages/salle/salle.component';
 import { FormSalleComponent } from './core/pages/form.salle/form.salle.component';
 import { SessionComponent } from './core/pages/session/session.component';
 import { InscritsComponent } from './core/pages/inscrits/inscrits.component';
-
+import { FormInscriptionComponent } from './core/pages/form.inscription/form.inscription.component';
+import { FormCoursComponent } from './core/pages/form.cours/form.cours.component';
 export const routes: Routes = [
     {
         path:"cours",
-        component:CoursComponent,
+        children:[
+            {
+                path: "",
+                component:CoursComponent
+            },
+            {
+                path: "form",
+                component: FormCoursComponent
+            }
+        ]
+        
     },
     {
         path:"classe",
@@ -25,8 +36,19 @@ export const routes: Routes = [
         component:SessionComponent
     },
     {
-        path:"inscription/:id",
-        component:InscritsComponent
+        
+        path:"inscription",
+        children:[
+            {
+                path: ":id",
+                component: InscritsComponent
+            },
+            {
+                path:"",
+                component:FormInscriptionComponent
+            }
+        ]
+        
     },
     {
         path:"salle",
@@ -38,8 +60,7 @@ export const routes: Routes = [
             },
             {
             path:"form",
-        component:FormSalleComponent
-
+            component:FormSalleComponent
         }
     ]
     },

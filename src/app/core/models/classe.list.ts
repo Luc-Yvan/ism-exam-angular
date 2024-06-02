@@ -5,7 +5,5 @@ export  type ClasseListe ={
     effectif: number,
     filiere:string,
     niveau:string
-   // professeur: [],
-   
- 
+  
 }

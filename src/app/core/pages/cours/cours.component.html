@@ -7,7 +7,7 @@
         </div>
         <div class="card-body">
             <div class="my-2 float-end">
-                <a  class="btn btn-outline-info"  >Nouveau</a>
+                <a routerLink="/cours/form" class="btn btn-outline-info"  >Nouveau</a>
                
             </div>
             <div>
@@ -38,8 +38,6 @@
                 <thead>
                 <th>libelle</th>
                 <th>volume_horaire</th>
-                <th>professeur</th>
-                <th>classe</th>
                 <th>etat cours</th>
 
                 </thead>
@@ -50,9 +48,7 @@
                 <tr >
                     <td >{{item.libelle}}</td>
                     <td >{{item.volume_horaire}}</td>
-                    <td >{{item.professeur}}</td>
-                    <td >{{item.classe}}</td>
-                    <td >{{item.etatCours}} {{item.id }}</td>
+                    <td >{{item.etatCours}}</td>
 
   
                     <td>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { CoursComponent } from './core/pages/cours/cours.component';
 import { CoursListe } from './core/models/cours.list';
@@ -14,11 +14,12 @@ import { ProfListe } from './core/models/prof.list';
 import { SalleListe } from './core/models/salle.list';
 import { ProfServiceImpl } from './core/services/prof/prof.service.impl';
 import { SalleServiceImpl } from './core/services/salle/salle.service.impl';
+import { InscritsComponent } from './core/pages/inscrits/inscrits.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CoursComponent,HeaderComponent,ClasseComponent,SalleComponent,ProfComponent],
+  imports: [RouterOutlet,SalleComponent,ProfComponent,InscritsComponent,HeaderComponent,CoursComponent,ClasseComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
