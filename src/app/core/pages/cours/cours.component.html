@@ -7,7 +7,7 @@
         </div>
         <div class="card-body">
             <div class="my-2 float-end">
-                <a  class="btn btn-outline-info"  >Nouveau</a>
+                <a routerLink="form"  class="btn btn-outline-info"  >Nouveau</a>
                
             </div>
             <div>
@@ -36,6 +36,7 @@
   
             <table class="table table-bordered">
                 <thead>
+                <th>id</th>
                 <th>libelle</th>
                 <th>volume_horaire</th>
                 <th>professeur</th>
@@ -48,15 +49,16 @@
            @for (item of response?.results; track $index){
                       
                 <tr >
+                    <td >{{item.id}}</td>
                     <td >{{item.libelle}}</td>
                     <td >{{item.volume_horaire}}</td>
                     <td >{{item.professeur}}</td>
                     <td >{{item.classe}}</td>
-                    <td >{{item.etatCours}}</td>
-
+                    <td >{{item.etatCours }}</td>
+        
   
                     <td>
-                        <a  class="btn btn-outline-success"> Voir details </a>
+                        <a routerLink="/session/{{item.id}}"   class="btn btn-outline-success"> Voir details </a>
                     </td>
                     <td>
                         <a  class="btn btn-outline-success"> Voir mon cours</a>

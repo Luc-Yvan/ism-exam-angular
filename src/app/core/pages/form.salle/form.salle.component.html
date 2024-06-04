@@ -31,14 +31,19 @@
 
                 </div>
                 <div class="mb-3">
-                    <label for="telepone">Numero</label>
-                    <input type="text" class="form-control" id="telepone" name="telepone" aria-describedby="emailHelp"
+                    <label for="numero">Numero</label>
+                    <input type="text" class="form-control" 
+                    id="numero" name="numero" 
+                    [(ngModel)]="salleCreate.numero"
+                    aria-describedby="emailHelp"
                            >
                     <div ></div>
                 </div>
                 <div class="mb-3">
-                    <label for="Ville">capacite</label>
-                    <input type="text" class="form-control" id="Ville" name="Ville"  aria-describedby="emailHelp"
+                    <label for="capacite">capacite</label>
+                    <input type="number" class="form-control" id="capacite" name="capacite"  
+                    [(ngModel)]="salleCreate.capacite"
+                    aria-describedby="emailHelp"
                            >
                 </div>
                

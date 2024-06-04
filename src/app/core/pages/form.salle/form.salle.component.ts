@@ -18,13 +18,14 @@ export class FormSalleComponent {
   salleCreate:SalleCreate={
     nom: "",
     numero: "",
-    capacite: "",
+    capacite: 0,
    
   }
   onSubmit(){
     this.salletService.create(this.salleCreate).subscribe(data=>{
+      console.log(data)
       if(data.statuts==201){
-        this.router.navigateByUrl("/clients")
+        this.router.navigateByUrl("/salle")
       }else{
          this.errors=data.results
       }

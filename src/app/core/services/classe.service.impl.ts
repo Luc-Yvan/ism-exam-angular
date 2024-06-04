@@ -1,5 +1,5 @@
 import { Observable } from "rxjs";
-import { ClasseListe } from "../models/classe.list";
+import { ClasseCreate, ClasseListe } from "../models/classe.list";
 import { RestResponse } from "../models/rest.response";
 import { ClasseService } from "./classe.service";
 import { Injectable } from "@angular/core";
@@ -16,6 +16,9 @@ export class ClasseServiceImpl implements ClasseService {
 
 
     constructor(private http:HttpClient) { }
+    create(classeCreate: ClasseCreate): Observable<RestResponse<ClasseCreate>> {
+        return  this.http.post<RestResponse<ClasseCreate>>(`${this.apiUrl}`,classeCreate)
+    }
     findAll(page:number=0, keyword:string=""): Observable<RestResponse<ClasseListe[]>> {
         return  this.http.get<RestResponse<ClasseListe[]>>(`${this.apiUrl}?page=${page}&keyword=${keyword}`)
     }

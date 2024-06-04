@@ -10,6 +10,6 @@ export  interface SalleCreate {
     id?: number,
     nom: string,
     numero: string,
-    capacite: string,
+    capacite: number,
     
 }
