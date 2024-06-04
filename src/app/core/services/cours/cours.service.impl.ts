@@ -1,11 +1,9 @@
 import { Observable } from "rxjs";
-<<<<<<< HEAD:src/app/core/services/cours.service.impl.ts
 import { CoursCreate, CoursListe } from "../models/cours.list";
 import { RestResponse } from "../models/rest.response";
-=======
+
 import { CoursCreate, CoursListe } from "../../models/cours.list";
-import { RestResponse } from "../../models/rest.response";
->>>>>>> 3a149ce929fd61790cc70643ecf01ae521185572:src/app/core/services/cours/cours.service.impl.ts
+
 import { CoursService } from "./cours.service";
 import { environment } from "../../../environnements/environment.development";
 import { HttpClient } from "@angular/common/http";
