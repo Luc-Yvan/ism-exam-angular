@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { SalleService } from '../../services/salle.service';
-import { Router } from '@angular/router';
-import { SalleServiceImpl } from '../../services/salle.service.impl';
+import { SalleServiceImpl } from '../../services/salle/salle.service.impl';
 import { SalleCreate } from '../../models/salle.list';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form.salle',
@@ -14,15 +13,22 @@ import { SalleCreate } from '../../models/salle.list';
 })
 export class FormSalleComponent {
   errors:any
-  constructor(private salletService:SalleServiceImpl,private router:Router){}
+  constructor(private router:Router,private salleService:SalleServiceImpl){}
   salleCreate:SalleCreate={
     nom: "",
     numero: "",
+<<<<<<< HEAD
     capacite: 0,
    
   }
   onSubmit(){
     this.salletService.create(this.salleCreate).subscribe(data=>{
+=======
+    capacite: 0
+  }
+  onSubmit(){
+    this.salleService.create(this.salleCreate).subscribe(data=>{
+>>>>>>> 3a149ce929fd61790cc70643ecf01ae521185572
       console.log(data)
       if(data.statuts==201){
         this.router.navigateByUrl("/salle")

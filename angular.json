@@ -27,7 +27,10 @@
             "styles": [
               "src/styles.css",
               "node_modules/select2/dist/css/select2.min.css"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3a149ce929fd61790cc70643ecf01ae521185572
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -101,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

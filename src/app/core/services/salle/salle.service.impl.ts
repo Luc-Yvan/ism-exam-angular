@@ -1,9 +1,9 @@
 import { Observable } from "rxjs";
-import { RestResponse } from "../models/rest.response";
-import { SalleCreate, SalleListe } from "../models/salle.list";
+import { RestResponse } from "../../models/rest.response";
+import { SalleCreate, SalleListe } from "../../models/salle.list";
 import { SalleService } from "./salle.service";
 import { Injectable } from "@angular/core";
-import { environment } from "../../environnements/environment.development";
+import { environment } from "../../../environnements/environment.development";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({

@@ -4,7 +4,7 @@ export  type ClasseListe ={
     libelle: string,
     effectif: number,
     filiere:string,
-    niveau:string
+    niveau:string 
    // professeur: [],
    
  
@@ -15,5 +15,4 @@ export  interface ClasseCreate {
     effectif: string,
     filiere: string,
     niveau: string,
-    
 }
