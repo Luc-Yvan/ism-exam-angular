@@ -22,6 +22,7 @@ export interface SessionCreate {
     heureCours:string,
     finCours:string,
     professeur:string,
+    classes:string[],
     salle:string,
     capacite:number
 }

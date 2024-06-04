@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProfCreate } from '../../models/prof.list';
-import { ProfServiceImpl } from '../../services/prof.service.impl';
+
 import { FormsModule } from '@angular/forms';
+import { ProfServiceImpl } from '../../services/prof/prof.service.impl';
 
 @Component({
   selector: 'app-form-prof',

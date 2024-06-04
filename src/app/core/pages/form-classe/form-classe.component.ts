@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ClasseCreate } from '../../models/classe.list';
-import { ClasseServiceImpl } from '../../services/classe.service.impl';
+import { ClasseServiceImpl } from '../../services/classe/classe.service.impl';
 
 @Component({
   selector: 'app-form-classe',

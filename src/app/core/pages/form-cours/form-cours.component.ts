@@ -4,11 +4,12 @@ import { FormBuilder, FormControl, ReactiveFormsModule, Validators } from '@angu
 import { Router } from '@angular/router';
 import { ClasseListe } from '../../models/classe.list';
 import { ProfListe } from '../../models/prof.list';
-import { ClasseServiceImpl } from '../../services/classe.service.impl';
-import { CoursServiceImpl } from '../../services/cours.service.impl';
-import { ProfServiceImpl } from '../../services/prof.service.impl';
+
 import { CoursCreate } from '../../models/cours.list';
 import 'select2';
+import { ClasseServiceImpl } from '../../services/classe/classe.service.impl';
+import { CoursServiceImpl } from '../../services/cours/cours.service.impl';
+import { ProfServiceImpl } from '../../services/prof/prof.service.impl';
 declare var $: any;
 
 @Component({
@@ -102,10 +103,11 @@ export class FormCoursComponent implements OnInit{
   addCours(): void {
     if (this.coursForm.valid) {
       const cours: CoursCreate = {
-        libelle: this.coursForm.value.libelle ?? '', 
-      volume_horaire: this.coursForm.value.volume_horaire ?? 0, 
-      professeurs: this.coursForm.value.professeurs ?? [], 
-      classes: this.coursForm.value.classes ?? []
+        libelle: this.coursForm.value.libelle ?? '',
+        volume_horaire: this.coursForm.value.volume_horaire ?? 0,
+        professeurs: this.coursForm.value.professeurs ?? [],
+        classes: this.coursForm.value.classes ?? [],
+        etatCours: ''
       };
       alert(cours.professeurs)
       console.log(cours)

@@ -102,10 +102,11 @@ export class FormCoursComponent implements OnInit {
   addCours(): void {
     if (this.coursForm.valid) {
       const cours: CoursCreate = {
-        libelle: this.coursForm.value.libelle ?? '', 
-      volume_horaire: this.coursForm.value.volume_horaire ?? 0, 
-      professeurs: this.coursForm.value.professeurs ?? [], 
-      classes: this.coursForm.value.classes ?? []
+        libelle: this.coursForm.value.libelle ?? '',
+        volume_horaire: this.coursForm.value.volume_horaire ?? 0,
+        professeurs: this.coursForm.value.professeurs ?? [],
+        classes: this.coursForm.value.classes ?? [],
+        etatCours: ''
       };
       alert(cours.professeurs)
       console.log(cours)

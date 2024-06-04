@@ -60,17 +60,20 @@ export const routes: Routes = [
         ]
     },
     {
-        path:"session/:id",
-        component:SessionComponent,
+        path:"session",
+        children:[
+            {
+            path:":id",
+            component:SessionComponent,
+            },
+            {
+                path:"",
+                component:FormSessionComponent
+            }
+        ]
+     
     },
-    {
-        path: "session/form",
-        component: FormSessionComponent
-    },
-    {
-        path:"inscription/:id",
-        component:InscriptionComponent,
-    },
+  
     {
         path:"session/:id",
         component:SessionComponent

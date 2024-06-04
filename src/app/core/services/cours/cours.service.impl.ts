@@ -1,8 +1,8 @@
 import { Observable } from "rxjs";
-import { CoursCreate, CoursListe } from "../models/cours.list";
-import { RestResponse } from "../models/rest.response";
-
 import { CoursCreate, CoursListe } from "../../models/cours.list";
+import { RestResponse } from "../../models/rest.response";
+
+
 
 import { CoursService } from "./cours.service";
 import { environment } from "../../../environnements/environment.development";
@@ -24,7 +24,5 @@ export class CoursServiceImpl implements CoursService {
         return  this.http.post<RestResponse<CoursCreate>>(`${this.apiUrl}`,coursCreate)
     }
 
-    create(coursCreate: CoursCreate): Observable<RestResponse<CoursCreate>> {
-        return  this.http.post<RestResponse<CoursCreate>>(`${this.apiUrl}`,coursCreate)
-    }
+   
 }
