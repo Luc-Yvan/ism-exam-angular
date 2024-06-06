@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Ajouter une Session</h2>
+    <form [formGroup]="sessionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="cours">Cours:</label>
+        <input type="text" class="form-control" id="cours" formControlName="cours" (keyup)="onCoursChange($event)" required>
+      </div>
+      <div class="form-group">
+        <label for="etatCours">État du Cours:</label>
+        <input type="text" class="form-control" id="etatCours" formControlName="etatCours" required>
+      </div>
+      <div class="form-group">
+        <label for="typeCours">Type de Cours:</label>
+        <input type="text" class="form-control" id="typeCours" formControlName="typeCours" required>
+      </div>
+      <div class="form-group">
+        <label for="dateCours">Date du Cours:</label>
+        <input type="date" class="form-control" id="dateCours" formControlName="dateCours" required>
+      </div>
+      <div class="form-group">
+        <label for="heureCours">Heure du Cours:</label>
+        <input type="time" class="form-control" id="heureCours" formControlName="heureCours" required>
+      </div>
+      <div class="form-group">
+        <label for="finCours">Fin du Cours:</label>
+        <input type="time" class="form-control" id="finCours" formControlName="finCours" required>
+      </div>
+      <div class="form-group">
+        <label for="professeur">Professeur:</label>
+        <select id="professeur" formControlName="professeur" class="form-control" required>
+          <option *ngFor="let prof of professeurs" [value]="prof">{{ prof }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="classes">Classes:</label>
+        <select id="classes" formControlName="classes" class="form-control" multiple="multiple" required>
+          <option *ngFor="let classe of classes" [value]="classe">{{ classe }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="salle">Salle:</label>
+        <input type="text" class="form-control" id="salle" formControlName="salle" required>
+      </div>
+      <div class="form-group">
+        <label for="capacite">Capacité:</label>
+        <input type="number" class="form-control" id="capacite" formControlName="capacite" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="sessionForm.invalid">Ajouter</button>
+    </form>
+  </div>
+  

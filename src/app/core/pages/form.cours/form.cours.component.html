@@ -1,28 +1,34 @@
-<!-- src/app/components/add-cours/add-cours.component.html -->
 <div class="container">
-    <h2>Ajouter un Cours</h2>
-    <form [formGroup]="coursForm" (ngSubmit)="addCours()">
+  <h2>Ajouter un Cours</h2>
+  <form [formGroup]="coursForm" (ngSubmit)="addCours()">
       <div class="form-group">
-        <label for="libelle">Libelle:</label>
-        <input type="text" class="form-control" id="libelle" formControlName="libelle" required>
+          <label for="libelle">Libelle:</label>
+          <input type="text" class="form-control" id="libelle" formControlName="libelle" required>
       </div>
       <div class="form-group">
-        <label for="volume_horaire">Volume Horaire:</label>
-        <input type="number" class="form-control" id="volume_horaire" formControlName="volume_horaire" required>
+          <label for="volume_horaire">Volume Horaire:</label>
+          <input type="number" class="form-control" id="volume_horaire" formControlName="volume_horaire" required>
       </div>
       <div class="form-group">
-        <label for="professeurs">Professeurs:</label>
-        <select multiple class="form-control" id="professeurs" formControlName="professeurs" required>
-          <option *ngFor="let prof of professeurs" [value]="prof">{{ prof.nomComplet }}</option>
-        </select>
+          <label for="professeurs">Professeurs</label>
+          <select id="professeurs" formControlName="professeurs" multiple="multiple" style="width: 100%;">
+              <option *ngFor="let prof of professeurs" [value]="prof.nomComplet">{{ prof.nomComplet }}</option>
+          </select>
+          <div *ngIf="coursForm.get('professeurs')?.invalid && coursForm.get('professeurs')?.touched">
+              Au moins un professeur est requis
+          </div>
       </div>
+
       <div class="form-group">
-        <label for="classes">Classes:</label>
-        <select multiple class="form-control" id="classes" formControlName="classes" required>
-          <option *ngFor="let classe of classes" [value]="classe">{{ classe.libelle }}</option>
-        </select>
+          <label for="classes">Classes</label>
+          <select id="classes" formControlName="classes" multiple="multiple" style="width: 100%;">
+              <option *ngFor="let classe of classes" [value]="classe.libelle">{{ classe.libelle }}</option>
+          </select>
+          <div *ngIf="coursForm.get('classes')?.invalid && coursForm.get('classes')?.touched">
+              Au moins une classe est requise
+          </div>
       </div>
-      <button type="submit" class="btn btn-primary">Ajouter</button>
-    </form>
-  </div>
-  
+
+      <button [disabled]="coursForm.invalid" type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+</div>

@@ -26,7 +26,6 @@ export class FormInscriptionComponent implements OnInit{
  
   inscritsModel:InscriptionCreate={
     etudiant: "",
-    tuteur:"",
     anneeScolaire: "2024-2025",
     matricule: this.generateRandomString(8),
     classe: ""

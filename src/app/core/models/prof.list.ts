@@ -6,3 +6,11 @@ export  type ProfListe ={
    
  
 }
+
+export  interface ProfCreate {
+    id?: number,
+    nomComplet: string,
+    grade: string,
+    
+    
+}

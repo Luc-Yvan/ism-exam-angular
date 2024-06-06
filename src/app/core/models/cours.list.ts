@@ -12,6 +12,6 @@ export interface CoursCreate {
     id?: number,
     libelle: string,
     volume_horaire: number,
-    professeurs: ProfListe[],
-    classes:ClasseListe[]
+    professeurs: string[],
+    classes:string[]
 }

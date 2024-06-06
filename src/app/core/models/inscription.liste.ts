@@ -13,7 +13,6 @@ export interface InscriptionCreate {
     id?: number,
     anneeScolaire:string,
     etudiant:string,
-    tuteur:string,
     matricule:string,
     classe:string
 

@@ -7,3 +7,11 @@ export  type ClasseListe ={
     niveau:string
   
 }
+
+export  interface ClasseCreate {
+    id?: number,
+    libelle: string,
+    effectif: string,
+    filiere: string,
+    niveau: string,
+}
