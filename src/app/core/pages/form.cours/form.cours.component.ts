@@ -87,7 +87,8 @@ export class FormCoursComponent implements OnInit, AfterViewInit {
         libelle: this.coursForm.value.libelle ?? '',
         volume_horaire: this.coursForm.value.volume_horaire ?? 0,
         professeurs: this.coursForm.value.professeurs ?? [],
-        classes: this.coursForm.value.classes ?? []
+        classes: this.coursForm.value.classes ?? [],
+        etatCours: ''
       };
       console.log(cours);
       this.coursService.create(cours).subscribe(data => {

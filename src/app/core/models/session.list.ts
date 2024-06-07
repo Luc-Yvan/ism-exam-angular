@@ -1,3 +1,4 @@
+
 export type SessionListe ={
     id: number,
     cours:string,
@@ -10,6 +11,7 @@ export type SessionListe ={
     salle:string,
     capacite:number
 }
+
 
 export interface SessionCreate {
     id?: number,

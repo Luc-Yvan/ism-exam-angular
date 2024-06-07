@@ -12,7 +12,10 @@ import { SessionServiceImpl } from '../../services/session/session.service.impl'
   templateUrl: './session.component.html',
   styleUrl: './session.component.css'
 })
+
+
 export class SessionComponent implements OnInit{
+
   response?:RestResponse<SessionListe[]>;
   idCours:string|null="";
   constructor(private sessionService:SessionServiceImpl,private route:ActivatedRoute){

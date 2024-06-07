@@ -8,6 +8,8 @@ export  type ClasseListe ={
   
 }
 
+
+
 export  interface ClasseCreate {
     id?: number,
     libelle: string,

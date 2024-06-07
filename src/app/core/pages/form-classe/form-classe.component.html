@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid mt-2 w-50" >
+
+    <div class="card mt-1">
+        <div class="card-header">
+            <h3>Enregistrer Classes</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" >
+                <div class="mb-3">
+                    <label for="nomComplet">Nom Classe</label>
+                    <input type="text" class="form-control" id="libelle" 
+                    name="libelle" 
+                    [(ngModel)]="classeCreate.libelle"
+                    aria-describedby="emailHelp"
+                    required
+                    #libelle="ngModel"
+                           >
+                       @if(libelle.errors && (libelle.dirty || libelle.touched)){
+                            <div class="form-text text-danger" >Nom  obligatoire</div>
+                        }
+
+                </div>
+                <div class="mb-3">
+                    <label for="effectif">Effectif</label>
+                    <input type="text" class="form-control" id="effectif" name="effectif" aria-describedby="emailHelp"
+                           >
+                    <div ></div>
+                </div>
+                <div class="mb-3">
+                    <label for="filiere">filiere</label>
+                    <input type="text" class="form-control" id="filiere" name="filiere"  aria-describedby="emailHelp"
+                           >
+                </div>
+                <div class="mb-3">
+                    <label for="niveau">niveau</label>
+                    <input type="text" class="form-control" id="niveau" name="niveau"  aria-describedby="emailHelp"
+                           >
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Enregistrer la classe</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -17,7 +17,8 @@ export class FormSalleComponent {
   salleCreate:SalleCreate={
     nom: "",
     numero: "",
-    capacite: 0
+    capacite: 0,
+   
   }
   onSubmit(){
     this.salleService.create(this.salleCreate).subscribe(data=>{
