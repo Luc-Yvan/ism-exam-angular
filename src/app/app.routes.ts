@@ -16,4 +16,9 @@ export const routes: Routes = [
       path:"RP",
       loadChildren:()=>import("./rp/rp.module").then(mod=>mod.RpModule)
     },
+    {
+      path:"",
+      redirectTo:"/RP/classe",
+      pathMatch:"full"
+    }
 ];
