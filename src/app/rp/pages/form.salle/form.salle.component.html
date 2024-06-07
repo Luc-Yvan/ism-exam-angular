@@ -1,0 +1,46 @@
+
+<div class="container-fluid mt-2 w-50" >
+
+    <div class="card mt-1">
+        <div class="card-header">
+            <h3>Enregistrer Salles</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" >
+                <div class="mb-3">
+                    <label for="nomComplet">Nom Salle</label>
+                    <input type="text" class="form-control" id="nomComplet" 
+                    name="nom" 
+                    [(ngModel)]="salleCreate.nom"
+                    aria-describedby="emailHelp"
+                    required
+                    #nom="ngModel"
+                           >
+                       @if(nom.errors && (nom.dirty || nom.touched)){
+                            <div class="form-text text-danger" >Nom  obligatoire</div>
+                        }
+
+                </div>
+                <div class="mb-3">
+                    <label for="numero">Numero</label>
+                    <input type="text" class="form-control" 
+                    id="numero" name="numero" 
+                    [(ngModel)]="salleCreate.numero"
+                    aria-describedby="emailHelp"
+                           >
+                    <div ></div>
+                </div>
+                <div class="mb-3">
+                    <label for="capacite">capacite</label>
+                    <input type="number" class="form-control" id="capacite" name="capacite"  
+                    [(ngModel)]="salleCreate.capacite"
+                    aria-describedby="emailHelp"
+                           >
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+</div>
+

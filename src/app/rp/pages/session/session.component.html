@@ -1,0 +1,71 @@
+    
+    <div class=" card-body mt-5 "style="margin: 150px;">
+        
+          
+        <form class="d-flex my-5" style="margin-left: 10px;" method="post" action="">
+            <div class="row w-100">
+                <div class="col-2 ml-2">
+                    <a routerLink="/session/form" type="submit" class="btn btn-primary" style="background-color: #fd7e14; color: white;">Nouveau</a>
+                </div>
+            </div>
+        </form>
+        <div class="text-danger" style="margin-left: 10px;">
+            
+        </div>
+        <h5 class=" card-title " style=" margin-left: 10px; ">Sessions De Cours</h5>
+            <div class="container mt-3">
+                <div class="table-responsive table-bordered table-light mt-3">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Cours</th>
+                                <th scope="col">Etat Cours</th>
+                                <th scope="col">Type Cours</th>
+                                <th scope="col">Date Cours</th>
+                                <th scope="col">Heure Cours</th>
+                                <th scope="col">Fin Cours</th>
+                                <th scope="col">Professeur</th>
+                                <th scope="col">Salle</th>
+                                <th scope="col">Capacite</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (item of response?.results; track $index){
+                      
+                                <tr>
+                                    <td >{{item.id}}</td>
+                                    <td >{{item.cours}}</td>
+                                    <td >{{item.etatCours}}</td>
+                                    <td >{{item.typeCours}}</td>
+                                    <td >{{item.dateCours}}</td>
+                                    <td >{{item.heureCours}}</td>
+                                    <td >{{item.finCours}}</td>
+                                    <td >{{item.professeur}}</td>
+                                    <td >{{item.salle}}</td>
+                                    <td >{{item.capacite}}</td>
+                                    <td>
+<<<<<<< HEAD
+                                        <a class="btn btn-outline-success"> Voir details </a>
+=======
+>>>>>>> 3a149ce929fd61790cc70643ecf01ae521185572
+                                        <a routerLink="/inscription/{{item.id}}" class="btn btn-outline-success"> Voir Etudiants </a>
+                                    </td>
+                                </tr>
+                          }   
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link">Previous</a></li>
+                            @for (item of response?.pages; track $index){
+                              <li class="page-item" [ngClass]="{'active':$index==response?.currentPage}">
+                                  <a (click)="paginate($index)" class="page-link">{{$index+1}}</a>
+                              </li>
+                            }
+                              <li class="page-item"><a class="page-link" >Next </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    

@@ -1,0 +1,55 @@
+    
+    <div class=" card-body mt-5 "style="margin: 150px;">
+       
+        <form class="d-flex my-5" style="margin-left: 10px;" method="post" action="">
+            <div class="row w-100">
+                <div class="col-6" >
+                    <input type="text" class="form-control" placeholder="grade" name="grade" aria-label="grade">
+                </div>
+                <div class="col-2 ml-2">
+                    <a routerLink="form" type="submit" class="btn btn-primary" style="background-color: #fd7e14; color: white;">Nouveau</a>
+                </div>
+               
+            </div>
+
+        </form>
+       
+        <h5 class=" card-title " style=" margin-left: 10px; ">Liste des Profs</h5>
+            <div class="container mt-3">
+                <div class="table-responsive table-bordered table-light mt-3">
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nom complet</th>
+                                <th scope="col">Grade</th>
+                                <th scope="col">detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (item of response?.results; track $index){
+                                <tr >
+                                    <td >{{item.id}}</td>
+                                    <td >{{item.nomComplet}}</td>
+                                    <td >{{item.grade}}</td>
+                                    <td>
+                                        <a  class="btn btn-outline-success"> Voir details </a>
+                                    </td>
+                                </tr>
+                          }    
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link">Previous</a></li>
+                            @for (item of response?.pages; track $index){
+                              <li class="page-item" [ngClass]="{'active':$index==response?.currentPage}">
+                                  <a (click)="paginate($index)" class="page-link">{{$index+1}}</a>
+                              </li>
+                            }
+                              <li class="page-item"><a class="page-link" >Next </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    
